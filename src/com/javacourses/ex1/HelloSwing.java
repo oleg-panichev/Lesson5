@@ -6,8 +6,10 @@ import java.awt.*;
 /**
  * Created by Oleg on 01.02.14.
  */
-public class HelloSwing extends JFrame {
+public class HelloSwing {
     public HelloSwing() {
+        //extends JFrame
+        /*
         setSize(200,300);
         setTitle("Hello Swing");
 
@@ -18,10 +20,14 @@ public class HelloSwing extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setVisible(true);
+        */
     }
 
     public static void main(String[] args) {
-        HelloSwing helloSwing=new HelloSwing();
+        //HelloSwing helloSwing=new HelloSwing();
+        JFrame frame=new JFrame("My First Calculator");
+        frame.setSize(400,100);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         JPanel windowContent=new JPanel();
 
@@ -38,6 +44,7 @@ public class HelloSwing extends JFrame {
         JLabel label3=new JLabel("Sum");
         JTextField result=new JTextField(10);
         JButton addBtn=new JButton("Add");
+        addBtn.addActionListener(new CalculateAction(field1,field2,result));
 
         windowContent.add(label1);
         windowContent.add(field1);
@@ -47,9 +54,7 @@ public class HelloSwing extends JFrame {
         windowContent.add(result);
         windowContent.add(addBtn);
 
-        JFrame frame=new JFrame("My FIrst Calculator");
         frame.setContentPane(windowContent);
-        frame.setSize(400,100);
         frame.setVisible(true);
     }
 }
