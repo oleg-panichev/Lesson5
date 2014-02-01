@@ -10,8 +10,12 @@ public class ValuesCalculations {
     String sVal2;
 
     public double plus() {
-        val1=Double.parseDouble(sVal1);
-        val2=Double.parseDouble(sVal2);
+        val1=0;
+        val2=0;
+        if (!sVal1.isEmpty() && !sVal2.isEmpty()) {
+            val1=Double.parseDouble(sVal1);
+            val2=Double.parseDouble(sVal2);
+        }
         return val1+val2;
     }
 

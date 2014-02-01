@@ -13,8 +13,7 @@ public class ButtonAction implements ActionListener {
     JButton jb;
     ValuesCalculations vc;
 
-    public ButtonAction(JTextField tf1, JTextField tf2, JButton jb, ValuesCalculations vc) {
-        this.jb=jb;
+    public ButtonAction(JTextField tf1, JTextField tf2, ValuesCalculations vc) {
         this.tf1=tf1;
         this.tf2=tf2;
         this.vc=vc;
@@ -22,7 +21,8 @@ public class ButtonAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch(jb.getText()) {
+        String s=((JButton)e.getSource()).getText();
+        switch(s) {
             case ("1"):
                 tf1.setText(tf1.getText()+"1");
                 tf2.setText(tf2.getText()+"1");
@@ -76,9 +76,10 @@ public class ButtonAction implements ActionListener {
                 if (!(tf2.getText().isEmpty())) {
                     vc.sVal2=tf2.getText();
                     tf2.setText("");
+                    double result=vc.plus();
+                    tf1.setText(tf1.getText()+result);
+                    vc.sVal1=""+result;
                 }
-                tf1.setText(tf1.getText()+vc.plus());
-                vc.sVal1=vc.sVal2;
                 break;
         }
     }
