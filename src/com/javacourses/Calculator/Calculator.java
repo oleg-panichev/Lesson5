@@ -1,13 +1,14 @@
 package com.javacourses.Calculator;
 
 import javax.swing.*;
+import java.applet.Applet;
 import java.awt.*;
 
 /**
  * Created by Oleg on 01.02.14.
  */
-public class Calculator extends JFrame {
-    public static void main(String[] args) {
+public class Calculator extends JApplet {
+    public void init() {
         ValuesCalculations vc=new ValuesCalculations();
         JFrame frame=new JFrame("Calculator");
         frame.setSize(400,400);
