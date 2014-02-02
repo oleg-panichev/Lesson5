@@ -8,7 +8,7 @@ import java.awt.*;
  * Created by Oleg on 01.02.14.
  */
 public class Calculator extends JApplet {
-    public void init() {
+    public static void main(String[] args) {
         ValuesCalculations vc=new ValuesCalculations();
         JFrame frame=new JFrame("Calculator");
         frame.setSize(400,400);
